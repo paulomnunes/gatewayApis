@@ -15,3 +15,8 @@ Após a instalação das dependências, você pode iniciar o API Gateway com o s
 
 Isso iniciará o servidor do API Gateway na porta configurada (por padrão, a porta 6000).
 
+## Dependências
+
+- `express: ^4.18.2`
+- `nodemon: ^2.0.22`
+- `http-proxy-middleware: ^4.6.5`
