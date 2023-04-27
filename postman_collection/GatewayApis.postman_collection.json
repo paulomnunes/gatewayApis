@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "9ce7c3af-e095-4dce-b727-6fb468bc1ecb",
+		"name": "GatewayApis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21910288"
+	},
+	"item": [
+		{
+			"name": "Microsserviço A",
+			"item": [
+				{
+					"name": "Dados do cliente (Rotas privadas)",
+					"item": [
+						{
+							"name": "Criar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\":\"Paulo2\",\r\n    \"cpf\":\"114.847.111.8711\",\r\n    \"endereco\": \"Rua Teste, 123\",\r\n    \"listaDeDividas\":[\"Vivo\",\"Claro\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/microsservicoa/dadosPessoa",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"dadosPessoa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar todos",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/microsservicoa/dadosPessoa",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"dadosPessoa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar por ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/microsservicoa/dadosPessoa/:id",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"dadosPessoa",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Atualizar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cpf\":\"059\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/microsservicoa/dadosPessoa/:id",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"dadosPessoa",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/microsservicoa/dadosPessoa/:id",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"dadosPessoa",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Usuário",
+					"item": [
+						{
+							"name": "Criar",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\":\"Fulano da silva\",\r\n    \"email\":\"teste@gmail.com\",\r\n    \"senha\":\"123\",\r\n    \"confirmacaoDeSenha\":\"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/microsservicoa/usuario",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"usuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"teste@gmail.com\",\r\n    \"senha\":\"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/microsservicoa/usuario/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"usuario",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/microsservicoa/usuario",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"usuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/microsservicoa/usuario/:id",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"usuario",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remover",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/microsservicoa/usuario/:id",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"microsservicoa",
+										"usuario",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Rota padrão",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/microsservicoa/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicoa",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Microsserviço B",
+			"item": [
+				{
+					"name": "Rota padrão",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/microsservicob/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicob",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Dados do Score",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\":\"577.436.760-64\",\r\n    \"listaDeBens\":[\"imóvel\",\"carro\"],\r\n    \"fontesDeRenda\":[\"salário\",\"aluguel\"],\r\n    \"idade\": 45,\r\n    \"endereco\": \"Rua Teste, 123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/microsservicob/dadosScore",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicob",
+								"dadosScore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retornar todos os dados score",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/microsservicob/dadosScore",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicob",
+								"dadosScore"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retornar dados score por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/microsservicob/dadosScore/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicob",
+								"dadosScore",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar dados score",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listaDeBens\": \"imóvel,carro\",\r\n     \"idade\": 40\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/microsservicob/dadosScore/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicob",
+								"dadosScore",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover dados score",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/dadosScore/64494bd9c4096572d56c9cd4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"dadosScore",
+								"64494bd9c4096572d56c9cd4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Microsserviço C",
+			"item": [
+				{
+					"name": "Rota padrão",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/microsservicoc/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicoc",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar evento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cpf\": \"577.436.760-64\",\r\n  \"ultimaConsulta\": \"2023-04-26\",\r\n  \"movimentacaoFinanceira\": 5000,\r\n  \"ultimaCompra\": \"2023-04-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/microsservicoc/evento",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicoc",
+								"evento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retornar evento por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/microsservicoc/evento/:cpf",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"microsservicoc",
+								"evento",
+								":cpf"
+							],
+							"variable": [
+								{
+									"key": "cpf",
+									"value": "577.436.760-64"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rota padrão",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}",
+					"host": [
+						"{{URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rota incorreta - teste",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/teste",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"teste"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:6000"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDlkYWNmYzI1OTA4NjZhOWI0MmQ0ZSIsImlhdCI6MTY4MjU3MzYxOSwiZXhwIjoxNjgyNTc3MjE5fQ.AjSt5-J69sOY3sq_fd1vOKlYG2Hz9wioOPQx-zgG0i0",
+			"type": "string"
+		}
+	]
+}
