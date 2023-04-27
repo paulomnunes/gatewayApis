@@ -1,6 +1,11 @@
 # GatewayApis
 
-O GatewayAPIs é uma solução que atua como um ponto de entrada central para as requisições em um sistema distribuído dos microsserviços A,B e C. Ele roteia as requisições de entrada para os microsserviços apropriados, oferecendo um ponto de acesso único para os clientes consumirem os serviços disponíveis.
+O GatewayApis é uma solução de gateway de API desenvolvida para facilitar o acesso e a distribuição correta de requisições para microsserviços específicos. Ele serve como ponto de entrada centralizado, permitindo que você acesse os endpoints de diferentes microsserviços através de uma única interface.
+
+## Funcionalidades
+* Distribuição de requisições: O GatewayApis encaminha as requisições recebidas para os microsserviços correspondentes com base noss endpoints especificados.
+* Gerenciamento simplificado: Ao acessar o GatewayApis, você obtém uma visão geral dos microsserviços disponíveis e suas respectivas rotas.
+* Roteamento dinâmico: O GatewayApis permite adicionar e configurar novos microsserviços facilmente, sem a necessidade de alterar o código principal.
 
 ## Configuração
 
